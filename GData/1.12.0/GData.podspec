@@ -18,12 +18,14 @@ Pod::Spec.new do |s|
                          'Source/XMLSupport/*.{h,m}', 'Source/*.{h,m}', 'Source/Clients/**/*.{h,m}'
     gdc.libraries      = 'xml2'
     gdc.xcconfig       = { 'HEADER_SEARCH_PATHS' => '"$(SDKROOT)/usr/include/libxml2"' }
+    gdc.compiler_flags = '-fno-objc-arc'
   end
 
   s.subspec 'XMLNode' do |gdxml|
     gdxml.source_files = 'Source/XMLSupport/*.{h,m}'
     gdxml.libraries    = 'xml2'
     gdxml.xcconfig     = { 'HEADER_SEARCH_PATHS' => '"$(SDKROOT)/usr/include/libxml2"' }
+    gdxml.compiler_flags = '-fno-objc-arc'
   end
 
   s.requires_arc = false
